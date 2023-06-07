@@ -17,6 +17,7 @@ public class Code02 {
 			System.out.println("Numbers do not match!");
 		}
 		
+		kb.close();
 	}
 
 }

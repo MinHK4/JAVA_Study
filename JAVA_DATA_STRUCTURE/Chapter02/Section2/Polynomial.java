@@ -5,6 +5,18 @@ public class Polynomial {
 	public Term[] terms;	// 다항식의 항들 배열
 	public int nTerms;		// 다항식의 항의 개수
 	
+	// 생성자 인자 수 다르게 해서 다양하게 선언해놓기
+	public Polynomial() {
+		terms = new Terms[100];
+		nTerms = 0;
+	}
+	
+	public Polynomial(char n) {
+		name = n;
+		terms = new Terms[100];
+		nTerms = 0;
+	}
+	
 	public int findTerm(int e) {
 		for(int i=0; i<nTerms && terms[i].expo >= e; i++) {
 			if(terms[i].expo == e) return i;
@@ -22,9 +34,7 @@ public class Polynomial {
 				terms[i+1] = terms[i];
 				i--;
 			}
-			terms[i+1] = new Term();
-			terms[i+1].coef = c;
-			terms[i+1].expo = e;
+			terms[i+1] = new Term(c, e);
 			nTerms++;
 		}
 	}

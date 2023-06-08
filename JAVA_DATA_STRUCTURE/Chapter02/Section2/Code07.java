@@ -19,10 +19,7 @@ public class Code07 {
 			if(command.equals("create")) {
 				char name = kb.next().charAt(0);
 				
-				polys[n] = new Polynomial();
-				polys[n].name = name;
-				polys[n].terms = new Term[100]; 
-				polys[n].nTerms = 0;
+				polys[n] = new Polynomial(name);
 				n++;
 			} else if(command.equals("add")) {
 				char name = kb.next().charAt(0);
